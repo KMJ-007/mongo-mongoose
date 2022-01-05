@@ -1,11 +1,12 @@
 require("dotenv").config();
+//importing mongoose
 const mongoose = require("mongoose");
 const mongoUrl = process.env["MONGO_URI"];
 // console.log(mongoUrl)
 mongoose.connect(mongoUrl);
 
 const Schema = mongoose.Schema;
-
+//creating a schema
 const personSchema = new Schema({
   name: { type: String, required: true },
   age: Number,
@@ -13,8 +14,16 @@ const personSchema = new Schema({
 });
 const Person = mongoose.model("Person", personSchema);
 // console.log("hello repl what are you doing")
+
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+  const Karan = new Person({name:'Karan janthe',age:18,favoriteFoods:[dabeli,vadapav]})
+
+  Karan.save(function(err,data){
+    if(err) return  console.log(err);
+    done(null, data);
+    console.log(done(null, data));
+
+  })
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
