@@ -5,10 +5,10 @@ const mongoUrl=process.env['MONGO_URI'];
 mongoose.connect(mongoUrl);
 let Person;
 const personSchema =new Schema({
-name : {type:string ,required:true},
-age :  number,
-favoriteFoods : [string]
-})
+name : {type:String ,required:true},
+age :  Number,
+favoriteFoods : [String]
+});
 // console.log("hello repl what are you doing")
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
