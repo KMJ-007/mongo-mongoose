@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const mongoUrl=process.env.MONGO_URI;
+const mongoUrl=process.env['MONGO_URI'];
 // console.log(mongoUrl)
 mongoose.connect(mongoUrl);
 let Person;
