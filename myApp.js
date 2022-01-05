@@ -10,6 +10,7 @@ name : {type:String ,required:true},
 age :  Number,
 favoriteFoods : [String]
 });
+const Person = mongoose.model("Person", personSchema);
 // console.log("hello repl what are you doing")
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
