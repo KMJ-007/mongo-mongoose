@@ -5,7 +5,7 @@ const mongoUrl=process.env['MONGO_URI'];
 mongoose.connect(mongoUrl);
 let Person;
 const personSchema =new Schema({
-name : {string,required:true},
+name : {type:string ,required:true},
 age :  number,
 favoriteFoods : [string]
 })
