@@ -14,7 +14,6 @@ const personSchema = new Schema({
 });
 const Person = mongoose.model("Person", personSchema);
 // console.log("hello repl what are you doing")
-var Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   const karan = new Person({name:'Karan Janthe',age:18,favoriteFoods:['dabeli','vadapav',"icecream"]});
