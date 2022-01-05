@@ -1,6 +1,8 @@
 require('dotenv').config();
-
-
+const mongoose = require('mongoose');
+const mongoUrl=mongoose.connect(process.env.MONGO_URI);;
+// console.log(mongoUrl)
+mongoose.connect(mongoUrl);
 let Person;
 console.log("i am playig with replit, let's see what happens")
 const createAndSavePerson = (done) => {
