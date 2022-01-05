@@ -1,14 +1,15 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const mongoUrl=process.env['MONGO_URI'];
+require("dotenv").config();
+const mongoose = require("mongoose");
+const mongoUrl = process.env["MONGO_URI"];
 // console.log(mongoUrl)
 mongoose.connect(mongoUrl);
-let Person;
+
 const Schema = mongoose.Schema;
-const personSchema =new Schema({
-name : {type:String ,required:true},
-age :  Number,
-favoriteFoods : [String]
+
+const personSchema = new Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String],
 });
 const Person = mongoose.model("Person", personSchema);
 // console.log("hello repl what are you doing")
