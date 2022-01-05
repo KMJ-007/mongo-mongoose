@@ -2,7 +2,7 @@ require('dotenv').config();
 
 
 let Person;
-console.log("hello my name  is Karan m janthe")
+console.log("i am playig with replit, let's see what happens")
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
