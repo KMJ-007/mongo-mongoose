@@ -29,8 +29,10 @@ const createAndSavePerson = (done) => {
 
   karan.save(function(err,data){
     //if there is error than show the error in console else save the sata
+    console.log(data)
     if(err) return  console.error(err);
     done(null,data);
+    
 
   });
 };
