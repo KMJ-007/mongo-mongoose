@@ -11,7 +11,12 @@ app.listen(port, function() {
 const mongoose = require("mongoose");
 const mongoUrl = process.env["MONGO_URI"];
 // console.log(mongoUrl)
-mongoose.connect(mongoUrl);
+mongoose.connect(mongoUrl, { useUnifiedTopology: true, useNewUrlParser: true });
+const connection = mongoose.connection;
+
+connection.once("open", function() {
+  console.log("MongoDB database connection established successfully");
+});
 
 const Schema = mongoose.Schema;
 //creating a schema
@@ -22,7 +27,7 @@ const personSchema = new Schema({
 });
 
 const Person = mongoose.model("Person", personSchema);
-console.log("hello repl what are you doing")
+// console.log("hello repl what are you doing")
 
 const createAndSavePerson = (done) => {
   const karan = new Person({name:'Karan Janthe',age:18,favoriteFoods:['dabeli','vadapav',"icecream"]});
