@@ -12,29 +12,20 @@ const personSchema = new Schema({
   age: Number,
   favoriteFoods: [String],
 });
-// const Person = mongoose.model("Person", personSchema);
-// console.log("hello repl what are you doing")
 
-// const createAndSavePerson = (done) => {
-//   const karan = new Person({name:'Karan Janthe',age:18,favoriteFoods:['dabeli','vadapav',"icecream"]});
+const Person = mongoose.model("Person", personSchema);
+console.log("hello repl what are you doing")
 
-//   karan.save(function(err,data){
-//     if(err) return  console.error(err);
-//     done(null,data);
+const createAndSavePerson = (done) => {
+  const karan = new Person({name:'Karan Janthe',age:18,favoriteFoods:['dabeli','vadapav',"icecream"]});
 
-//   });
-// };
+  karan.save(function(err,data){
+    if(err) return  console.error(err);
+    done(null,data);
 
-var Person = mongoose.model('Person', personSchema);
-
-var createAndSavePerson = function(done) {
-  var janeFonda = new Person({name: "Jane Fonda", age: 84, favoriteFoods: ["eggs", "fish", "fresh fruit"]});
-
-  janeFonda.save(function(err, data) {
-    if (err) return console.error(err);
-    done(null, data)
   });
 };
+
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
