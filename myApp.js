@@ -64,7 +64,7 @@ const findOneByFood = (food, done) => {
 
 const findPersonById = (personId, done) => {
   
-  Person.findById({_id:personId},(err,data)=>{
+  Person.findById(personId,(err,data)=>{
     if(err)return console.log(err);
     done(null,data);
   });
@@ -72,7 +72,7 @@ const findPersonById = (personId, done) => {
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
-  Person.findById({_id:personId},(err,data)=>{
+  Person.findById(personId,(err,data)=>{
     if(err)return console.log(err);
     
     Person.favoriteFoods.push(foodToAdd);
@@ -80,7 +80,7 @@ const findEditThenSave = (personId, done) => {
     Person.save((err,updatedPerson)=>{
       if(err)return console.log(err);
     done(null,updatedPerson);
-    })
+    });
   });
 
 };
