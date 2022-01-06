@@ -1,11 +1,14 @@
 require("dotenv").config();
 //importing mongoose
 const mongoose = require("mongoose");
+//taking mongourl from env file
 const mongoUrl = process.env["MONGO_URI"];
 // console.log(mongoUrl)
+//connecting mongodb database
 mongoose.connect(mongoUrl);
 const connection = mongoose.connection;
 
+//for checking our connection is done or not
 connection.once("open", function() {
   console.log("MongoDB database connection established successfully");
 });
@@ -25,6 +28,7 @@ const createAndSavePerson = (done) => {
   const karan = new Person({name:'Karan Janthe',age:18,favoriteFoods:['dabeli','vadapav',"icecream"]});
 
   karan.save(function(err,data){
+    //if there is error than show the error in console else save the sata
     if(err) return  console.error(err);
     done(null,data);
 
