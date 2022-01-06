@@ -34,10 +34,13 @@ const createAndSavePerson = (done) => {
 
   });
 };
-
+const arrayOfPeople=[{name:'Krishna Agarwal',age:40,favoriteFoods:['grilledsandwich']},{name:'Het bhavsar',age:21,favoriteFoods:['pasta']}]
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  Person.create(arrayOfPeople,(err,data)=>{
+    if(err) return  console.error(err);
+    done(null , data);
+  });
 };
 
 const findPeopleByName = (personName, done) => {
