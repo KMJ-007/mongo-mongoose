@@ -5,11 +5,7 @@ const mongoose = require("mongoose");
 const mongoUrl = process.env["MONGO_URI"];
 // console.log(mongoUrl)
 //connecting mongodb database
-mongoose.connect(mongoUrl, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(mongoUrl);
 const connection = mongoose.connection;
 
 //for checking our connection is done or not
