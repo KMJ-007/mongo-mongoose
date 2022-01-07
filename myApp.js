@@ -111,7 +111,8 @@ const removeManyPeople = (done) => {
     done(null,response);
   });
 };
-
+// mongo db 4.1.1
+// 5.13.8 mongoose
 const queryChain = (done) => {
   const foodToSearch = "burrito";
 Person.findOne({favoriteFoods:foodToSearch}).sort({name:1}).limit(2).select({age:0}).exec((err,people)=>{
