@@ -105,10 +105,11 @@ const removeById = (personId, done) => {
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
-  Person.remove({name: nameToRemove}, (err, response) => {
-
-    done(null, response);
-  })
+  Person.remove({name:nameToRemove},(err,response)=>{
+    console.log(response);
+    if(err) console.log(err);
+    done(null,response);
+  });
 };
 
 const queryChain = (done) => {
